@@ -1,0 +1,22 @@
+/* src/styles/main.scss */
+
+// 1. 設定檔 (Configuration) - 變數、工具先載入
+@use 'variables';
+@use 'mixins';
+
+// 2. 基礎樣式 (Base) - 重置瀏覽器預設樣式
+@use 'reset';
+
+// 3. 元件 (Components) - 未來您做的按鈕、卡片都加在這裡
+// 之後您新增檔案時，記得回來這裡補上一行
+@use 'components/button';
+@use 'components/card'; 
+// @import 'components/navbar';
+
+// 4. 全域排版 (Layout) - 針對這專案的特殊全域設定
+body {
+  font-family: var(--font-primary); // 使用變數
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
