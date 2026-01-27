@@ -1,0 +1,68 @@
+
+// 全域設定
+body {
+    font-family: $font-family-base;
+    color: $gray-900; // 假設你有設這個變數
+    -webkit-font-smoothing: antialiased; // 讓字體更滑順
+}
+
+// 標題共用設定 (Headings Shared)
+h1, h2, h3, h4, h5, h6 {
+    font-weight: $fw-semibold; // 全部都是 600
+    
+}
+
+// 各級標題設定 (包含 RWD)
+h1 {
+    font-size: $h1-size;
+    line-height: $lh-heading-lg; // 1.5
+    // @include media-breakpoint-down(md) {
+    //     font-size: $h1-size-m; // 手機變 36px
+    // }
+}
+
+h2 {
+    font-size: $h2-size;
+    line-height: $lh-heading-lg; // 1.5
+    // @include media-breakpoint-down(md) {
+    //     font-size: $h2-size-m;
+    // }
+}
+
+h3 {
+    font-size: $h3-size;
+    line-height: $lh-heading-lg; // 1.5
+    // @include media-breakpoint-down(md) {
+    //     font-size: $h3-size-m;
+    // }
+}
+
+h4 {
+    font-size: $h4-size;
+    line-height: $lh-heading-sm; // 1.8
+//     @include media-breakpoint-down(md) {
+//         font-size: $h4-size-m;
+//     }
+} 
+
+h5 {
+    font-size: $h5-size;
+    line-height: $lh-heading-sm; // 1.8
+}
+
+h6 {
+    font-size: $h6-size; // 18px
+    line-height: $lh-heading-sm; // 1.8
+}
+
+// 5. 客製化類別 (Subtitles & Body)
+// 這些通常不是 HTML 標籤，而是 class，例如 <p class="text-subtitle-1">
+
+// Subtitles (Weight 500, LH 1.9)
+.text-subtitle-1 { font-size: 20px; font-weight: $fw-medium; line-height: $lh-body; }
+.text-subtitle-2 { font-size: 18px; font-weight: $fw-medium; line-height: $lh-body; }
+.text-subtitle-3 { font-size: 16px; font-weight: $fw-medium; line-height: $lh-body; }
+
+// Body (Weight 400, LH 1.9)
+.text-body-1     { font-size: 18px; font-weight: $fw-regular; line-height: $lh-body; }
+.text-body-2     { font-size: 16px; font-weight: $fw-regular; line-height: $lh-body; }

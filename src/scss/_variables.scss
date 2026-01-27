@@ -1,0 +1,63 @@
+
+// Bootstrap套件
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot"; // 這會幫你做 Reset
+
+:root {  /* 使用 :root 來定義全域變數 */
+    
+  /* --- Gray Scale (灰階) --- */
+  --gray-900: #1a1a1a;  /* 請填入 Figma 上的真實色碼 */
+  --gray-700: #4a4a4a;
+  --gray-500: #808080;
+  --gray-300: #cccccc;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+
+  /* --- White / Opacity (白色與透明度) --- */
+  /* 如果 Figma 上是調整透明度，建議用 rgba 或 opacity */
+  --white-100: #ffffff;
+  --white-70: rgba(255, 255, 255, 0.7); /* 假設是 70% 透明度 */
+  --white-50: rgba(255, 255, 255, 0.5);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-10: rgba(255, 255, 255, 0.1);
+
+  /* --- Brand / Green (品牌綠) --- */
+  --green-900: #004d40;
+  --green-700: #00796b;
+  --green-500: #009688; /* 通常 500 是主色 */
+  --green-300: #4db6ac;
+  --green-100: #b2dfdb;
+  --green-50:  #e0f2f1;
+
+  /* --- Accent / Red (強調紅) --- */
+  --color-red: #ff5252;
+}
+
+// 1. Font Family
+$font-family-base: 'Noto Sans TC', sans-serif;
+
+// 2. Font Weights
+$fw-regular: 400; 
+$fw-medium:  500; 
+$fw-semibold: 600; 
+
+// 3. Line Heights (行高)
+// 圖上寫 150% -> 1.5
+// 圖上寫 180% -> 1.8
+// 圖上寫 190% -> 1.9
+$lh-heading-lg: 1.5; // H1-H3
+$lh-heading-sm: 1.8; // H4-H6
+$lh-body:       1.9; // Subtitle, Body
+
+// 4. Headings Sizes (Desktop / Mobile)
+// 依照你的截圖數據
+$h1-size: 48px;  $h1-size-m: 36px;
+$h2-size: 40px;  $h2-size-m: 32px;
+$h3-size: 32px;  $h3-size-m: 28px;
+$h4-size: 24px;  $h4-size-m: 22px;
+$h5-size: 20px;  // Mobile 沒特別寫通常維持 20px 或 18px
+$h6-size: 18px;  // 注意！截圖上 H6 是 18px，不是 16px
