@@ -1,63 +1,151 @@
 
 // Bootstrap套件
 @import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
-@import "../../node_modules/bootstrap/scss/reboot"; // 這會幫你做 Reset
 
-:root {  /* 使用 :root 來定義全域變數 */
-    
-  /* --- Gray Scale (灰階) --- */
-  --gray-900: #1a1a1a;  /* 請填入 Figma 上的真實色碼 */
-  --gray-700: #4a4a4a;
-  --gray-500: #808080;
-  --gray-300: #cccccc;
-  --gray-200: #e5e5e5;
-  --gray-100: #f5f5f5;
 
-  /* --- White / Opacity (白色與透明度) --- */
-  /* 如果 Figma 上是調整透明度，建議用 rgba 或 opacity */
-  --white-100: #ffffff;
-  --white-70: rgba(255, 255, 255, 0.7); /* 假設是 70% 透明度 */
-  --white-50: rgba(255, 255, 255, 0.5);
-  --white-30: rgba(255, 255, 255, 0.3);
-  --white-20: rgba(255, 255, 255, 0.2);
-  --white-10: rgba(255, 255, 255, 0.1);
+//定義基礎色票
+$gray-900: #292929;
+$gray-700: #575757;
+$gray-500: #A6A6A6;
+$gray-300: #D6D6D6;
+$gray-200: #EBEBEB;
+$gray-100: #F7F7F7;
 
-  /* --- Brand / Green (品牌綠) --- */
-  --green-900: #004d40;
-  --green-700: #00796b;
-  --green-500: #009688; /* 通常 500 是主色 */
-  --green-300: #4db6ac;
-  --green-100: #b2dfdb;
-  --green-50:  #e0f2f1;
+$white-100: #ffffff;
+$white-70:  rgba(#ffffff, 0.7);
+$white-50:  rgba(#ffffff, 0.5);
+$white-30:  rgba(#ffffff, 0.3);
+$white-20:  rgba(#ffffff, 0.2);
+$white-10:  rgba(#ffffff, 0.1);
 
-  /* --- Accent / Red (強調紅) --- */
-  --color-red: #ff5252;
-}
+$green-900: #005135;
+$green-700: #008657;
+$green-500: #00AF72; // 品牌主色 (Brand)
+$green-300: #61D9AF;
+$green-100: #ABEAD4;
+$green-50:  #F8F9FA;
 
-// 1. Font Family
-$font-family-base: 'Noto Sans TC', sans-serif;
+$red: #FA574F; // Accent
 
-// 2. Font Weights
+// Font 
+$text-primary: $gray-900;  
+$text-secondary: $gray-700;  
+$text-tertiary: $gray-500;  
+$text-brand: $green-700; 
+$text-on-dark: $white-100;     
+// Stroke 
+$border-on-light: $gray-300; 
+$border-on-dark: $white-30; 
+$border-brand: $green-700; 
+
+// Background 
+$bg-default: $gray-100; 
+$bg-subtle: $green-900; 
+
+//bootstrap變數
+$primary: $green-700; 
+$secondary: $gray-700;
+$dark: $gray-900;
+$body-color: $gray-700;
+
+//設定主題色
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": $dark,
+  // "body": $body-color,
+);
+
+// Font Family
+$font-family-base: 'Inter','Noto Sans TC', sans-serif;
+
+// Font Weights
 $fw-regular: 400; 
 $fw-medium:  500; 
 $fw-semibold: 600; 
 
-// 3. Line Heights (行高)
-// 圖上寫 150% -> 1.5
-// 圖上寫 180% -> 1.8
-// 圖上寫 190% -> 1.9
-$lh-heading-lg: 1.5; // H1-H3
-$lh-heading-sm: 1.8; // H4-H6
-$lh-body:       1.9; // Subtitle, Body
+// Letter Spacing
+$ls-base:   0px;
+$ls-tight: -1px; // ⚠️ 注意：CSS 的 -1 必須要有單位 (px)
 
-// 4. Headings Sizes (Desktop / Mobile)
-// 依照你的截圖數據
-$h1-size: 48px;  $h1-size-m: 36px;
-$h2-size: 40px;  $h2-size-m: 32px;
-$h3-size: 32px;  $h3-size-m: 28px;
-$h4-size: 24px;  $h4-size-m: 22px;
-$h5-size: 20px;  // Mobile 沒特別寫通常維持 20px 或 18px
-$h6-size: 18px;  // 注意！截圖上 H6 是 18px，不是 16px
+// Line Heights
+$lh-130: 1.3;
+$lh-140: 1.4;
+$lh-150: 1.5;
+$lh-160: 1.6;
+$lh-180: 1.8;
+$lh-190: 1.9;
+$lh-200: 2.0;
+
+ // for Desktop
+$lh-d-heading-sm: 1.4; // for Desktop
+$lh-d-heading-md: 1.5; // for Desktop 
+$lh-d-heading-lg: 1.8; // for Desktop
+$lh-m-heading-sm: 1.5; // for Mobile
+$lh-m-heading-lg: 1.6; // for Mobile
+$lh-m-heading-xs: 1.3; // for Mobile
+$lh-sub: 1.9; // Subtitle
+$lh-body-lg: 1.9; // Body
+$lh-body-sm: 2.0; // Body
+$lh-btn: 1.4; // Button
+
+// --- Heading (Noto Sans TC - 中文系統) ---
+// [Desktop]
+$h1-size-zh: 48px;  
+$h2-size-zh: 40px;  
+$h3-size-zh: 32px;  
+$h4-size-zh: 24px;  
+$h5-size-zh: 20px;  
+$h6-size-zh: 18px;  
+// [Mobile]
+$h1-size-zh-m: 36px;
+$h2-size-zh-m: 32px;
+$h3-size-zh-m: 28px;
+$h4-size-zh-m: 22px;
+
+// Subtitle Sizes
+$sub1-size: 20px;
+$sub2-size: 18px;
+$sub3-size: 16px;
+
+// Body Text Sizes
+$body1-size: 18px;
+$body2-size: 16px;
+$body3-size: 14px;
+
+// Button Text Size
+$btn1-size: 16px; 
+$btn2-size: 14px;
+$btn3-size: 12px;
+
+// --- Heading (Inter - 英文系統) ---
+// [Desktop]
+$h1-size-en: 52px;  
+$h2-size-en: 40px;
+$h3-size-en: 32px;
+$h4-size-en: 24px;
+$h5-size-en: 20px;
+$h6-size-en: 18px;
+
+// [Mobile] 
+$h1-size-en-m: 36px;
+$h2-size-en-m: 32px;
+$h3-size-en-m: 28px;
+$h4-size-en-m: 22px;
+
+// Subtitle Sizes
+$sub1-size-en: 18px;
+$sub2-size-en: 16px;
+$sub3-size-en: 14px;
+
+// Body Text Sizes
+$body1-size-en: 20px;
+$body2-size-en: 18px;
+$body3-size-en: 16px;
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot"; // Reset
+
+
