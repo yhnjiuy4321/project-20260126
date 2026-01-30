@@ -2,6 +2,9 @@
 // Bootstrap套件
 @import "../../node_modules/bootstrap/scss/functions";
 
+// =========================
+// Color Variables (色彩參數)
+// =========================
 
 //定義基礎色票
 $gray-900: #292929;
@@ -28,11 +31,12 @@ $green-50:  #F8F9FA;
 $red: #FA574F; // Accent
 
 // Font 
-$text-primary: $gray-900;  
-$text-secondary: $gray-700;  
-$text-tertiary: $gray-500;  
-$text-brand: $green-700; 
-$text-on-dark: $white-100;     
+$font-primary: $gray-900;  
+$font-secondary: $gray-700;  
+$font-tertiary: $gray-500;  
+$font-brand: $green-700; 
+$font-on-dark: $white-100;
+
 // Stroke 
 $border-on-light: $gray-300; 
 $border-on-dark: $white-30; 
@@ -53,8 +57,13 @@ $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "dark": $dark,
-  // "body": $body-color,
+  "body": $body-color,
 );
+
+
+// ===============================
+// Typography Variables (字體參數)
+// ===============================
 
 // Font Family
 $font-family-base: 'Inter','Noto Sans TC', sans-serif;
@@ -142,6 +151,34 @@ $sub3-size-en: 14px;
 $body1-size-en: 20px;
 $body2-size-en: 18px;
 $body3-size-en: 16px;
+
+
+// =============================================
+// Animation Variables (動畫參數)
+// =============================================
+$transition-base: all 0.3s ease-out; // 300ms
+$anim-duration-entry: 0.5s; // 500ms
+$anim-distance-entry: 200px; // Y軸位移
+$anim-curve-entry:  ease-out;
+
+
+// =============================================
+// Radius (圓角)
+// =============================================
+
+$radius-xxs: 4px; // for buttons and inputs
+$radius-xs:  8px; // for cards and modals
+
+// for Bootstrap 
+$border-radius:     $radius-xxs;  
+$border-radius-sm:  $radius-xxs;  
+$border-radius-lg:  $radius-xs; 
+
+// =============================================
+// Shadow (陰影)
+// =============================================
+$my-custom-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+$box-shadow: $my-custom-shadow;
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";

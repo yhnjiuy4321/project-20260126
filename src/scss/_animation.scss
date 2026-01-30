@@ -1,0 +1,25 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY($anim-distance-entry); // 從下方 200px 開始
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); // 回到原位
+  }
+}
+
+// 2. 定義動畫類別 (Utility Class)
+// 這是給 JS 控制用的：一開始是隱藏的，加上 .show 之後才跑動畫
+.fade-in-up {
+  opacity: 0; // 預設隱藏
+  transform: translateY($anim-distance-entry); // 預設在下方
+  transition: opacity $anim-duration-entry $anim-curve-entry,
+              transform $anim-duration-entry $anim-curve-entry;
+
+  // 當 JS 加上 .show 這個 class 時
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
