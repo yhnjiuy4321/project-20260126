@@ -1,0 +1,106 @@
+.navbar {
+
+  position: relative;
+  z-index: 1000;
+
+  //陰影
+  box-shadow: $box-shadow;
+
+  // 1. 設定定位基準 (讓選單可以跟隨視窗寬度)
+  .has-megamenu {
+    position: static !important;
+    
+  }
+
+  // 2. 選單本體設定
+  .megamenu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 2rem;
+    display: none; // 預設隱藏，避免需要點擊
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    top: 100%;
+    
+  }
+
+  .nav-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .dropdown-item {
+    padding-bottom: 5px;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    color: $font-primary;
+  }
+  
+
+  //電腦版互動邏輯 (只在寬度 >= 992px 生效)
+  @media all and (min-width: 992px) {
+    .nav-item.dropdown {
+      position: relative;
+    }
+
+    .nav-item.dropdown>.nav-link {
+      position: relative;
+    }
+
+    .nav-item.dropdown>.nav-link.dropdown-toggle::after {
+      display: none;
+    }
+
+    // Hover 變色效果
+    .navbar-nav .nav-item .nav-link {
+      &:hover {
+        color: $green-700;
+      }
+    }
+
+    .dropdown-menu .dropdown-item {
+      &:hover{
+        color: $green-700;
+        background-color: transparent;
+        transform: translateX(5px); // 微移動
+        transition: $transition-base; // 平滑過渡
+    }
+  }
+
+    // 當滑鼠滑過按鈕 (或是已經滑到選單上時)
+    .nav-item.dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover,
+    .nav-link:hover {
+      display: block ; // 強制顯示
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      // animation: fadeIn 0.3s ease; 
+      z-index: 999; 
+      color: $green-700;
+    }
+
+    .nav-item.dropdown>.nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; 
+      left: 0;
+      width: 100%;
+      height: 50px; 
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,3 +1,3 @@
-import { createApp } from 'vue'
+// import { createApp } from 'vue'
 
-createApp(App).mount('#app')
+// createApp(App).mount('#app')

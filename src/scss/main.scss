@@ -1,5 +1,25 @@
+// =============================================
+// 1. 先引入 Bootstrap 的工具 (這樣變數檔才能用 darken/lighten 等功能)
+// =============================================
+@import "../../node_modules/bootstrap/scss/functions";
+
+
 // 變數與工具 (最優先)
-@import "variables"; 
+@import "variables";
+
+// =============================================
+// 3. 引入 Bootstrap 的核心與樣式 (主角登場)
+// =============================================
+@import "../../node_modules/bootstrap/scss/variables"; // 載入 BS 預設變數
+@import "../../node_modules/bootstrap/scss/maps";      // (重要) 解決你剛剛那個錯誤的關鍵
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";      // 產生 CSS 變數
+@import "../../node_modules/bootstrap/scss/utilities";
+
+// 這裡可以選擇要引入全部，還是只引入你有用到的
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
 @import "mixins";
 
 // 基礎樣式 (Base)
@@ -17,3 +37,5 @@
 
 // 頁面 (Pages)
 @import "pages/home";
+
+

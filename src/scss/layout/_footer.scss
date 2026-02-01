@@ -1,0 +1,24 @@
+.bg-color {
+    background-color: $green-900;
+}
+
+.footer-custom {
+    // margin-top: -100px;
+    padding-top: 120px;
+    padding-bottom: 3rem;
+    // position: relative;
+    z-index:1; // 層級比卡片低，乖乖當背景
+}
+
+.cta-card {
+    margin-top: 150px;
+  position: relative; // 必須設定 relative 才能控制層級
+  z-index: 10;        // 層級設高一點，讓它浮在綠色 Footer 上面
+//   margin-bottom: -3rem; // (選配) 也可以用這個把下方撐開一點距離
+}
+
+.footer-card{
+    margin-bottom: -100px; 
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
