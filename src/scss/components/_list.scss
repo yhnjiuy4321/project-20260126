@@ -1,0 +1,6 @@
+.list-title {
+    &:hover {
+        color: $green-700;
+        transition: $transition-base;
+    }
+}
