@@ -1,35 +1,39 @@
 .navbar {
 
-  position: relative;
+  // 固定在頂部
+  position: sticky;
+  top: 0;
   z-index: 1000;
 
-  //陰影
+  //陰影 
   box-shadow: $box-shadow;
 
   // 1. 設定定位基準 (讓選單可以跟隨視窗寬度)
   .has-megamenu {
     position: static !important;
-    
+
   }
 
   // 2. 選單本體設定
   .megamenu {
+    //往下一點
+    margin-top: 0.5px;
     left: 0;
     right: 0;
     width: 100%;
     border-radius: 0;
-    padding: 2rem;
     display: none; // 預設隱藏，避免需要點擊
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     top: 100%;
-    
+
   }
 
   .nav-item {
     margin-left: 10px;
     margin-right: 10px;
+    padding: 10px 0;
   }
 
   .dropdown-item {
@@ -39,7 +43,9 @@
   .navbar-nav .nav-item .nav-link {
     color: $font-primary;
   }
-  
+
+
+
 
   //電腦版互動邏輯 (只在寬度 >= 992px 生效)
   @media all and (min-width: 992px) {
@@ -63,34 +69,38 @@
     }
 
     .dropdown-menu .dropdown-item {
-      &:hover{
+      &:hover {
         color: $green-700;
         background-color: transparent;
         transform: translateX(5px); // 微移動
         transition: $transition-base; // 平滑過渡
+      }
     }
-  }
 
     // 當滑鼠滑過按鈕 (或是已經滑到選單上時)
     .nav-item.dropdown:hover .dropdown-menu,
     .dropdown-menu:hover,
     .nav-link:hover {
-      display: block ; // 強制顯示
+      display: block; // 強制顯示
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
       // animation: fadeIn 0.3s ease; 
-      z-index: 999; 
+      z-index: 999;
       color: $green-700;
     }
 
     .nav-item.dropdown>.nav-link::after {
       content: '';
       position: absolute;
-      bottom: -100px; 
+      bottom: -100px;
       left: 0;
       width: 100%;
-      height: 50px; 
+      height: 50px;
+    }
+
+    .lang-select button {
+      pointer-events: none;
     }
   }
 }
@@ -103,4 +113,51 @@
   to {
     opacity: 1;
   }
+}
+
+@media all and (max-width: 768px) {
+
+  
+
+  .navbar .container-fluid {
+    padding: 0.5rem 1rem;
+  }
+
+
+  // 手機版選單互動邏輯 (只在寬度 < 992px 生效)
+  .nav-item.dropdown {
+    position: relative;
+  }
+
+  .design-system-link {
+    display: none;
+  }
+
+  .contact-us {
+    display: none;
+  }
+
+  .lang-select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lang-select button {
+    width: 100%;
+    text-align: left;
+    order: 1;
+  }
+
+  .lang-select .dropdown-menu {
+    width: 100%;
+    order: 2;
+  }
+
+  .lang-select .dropdown-toggle::after {
+    transform: rotate(180deg);
+    /* 旋轉 180 度 */
+    /* 或者你也可以直接改 border 樣式，但旋轉最快 */
+  }
+
 }

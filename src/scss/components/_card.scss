@@ -1,7 +1,6 @@
 .card{
     margin: 10px;
-
-    
+ 
     &:hover{
 
         .img-cover::after{
@@ -20,10 +19,10 @@
 }
 
 .img-cover{
-    position: relative;
+    position: relative; 
     width: 100%;
     height: 200px;
-    overflow: hidden;
+    overflow: hidden; 
     border-radius: $radius-xs;
 }
 

@@ -1,3 +1,4 @@
+// Intersection Observer 動畫效果
 document.addEventListener("DOMContentLoaded", function() {
   // 1. 設定觀察員的選項
   const options = {
@@ -23,3 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(el);
   });
 });
+
+
+
+

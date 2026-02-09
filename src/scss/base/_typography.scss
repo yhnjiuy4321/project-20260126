@@ -6,6 +6,22 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+.text-primary-dark-color{
+    color:$green-900;
+}
+
+.text-primary-color {
+    color: $green-700;
+}
+
+.text-secondary-color {
+    color: $font-secondary;
+}
+
+.text-dark-color {
+    color: $font-on-dark;
+}
+
 // 標題共用設定
 h1, h2, h3, h4, h5, h6 {
     font-weight: $fw-semibold;
@@ -51,7 +67,12 @@ h6 {
 // Body
 .text-body-1     { font-size: 18px; font-weight: $fw-regular; line-height: $lh-190; }
 .text-body-2     { font-size: 16px; font-weight: $fw-regular; line-height: $lh-190; }
+.text-body-3     { font-size: 14px; font-weight: $fw-regular; line-height: $lh-190; }
 
-// Font color helpers
-.font-primary { color: red; }
-.font-secondary { color: $font-secondary; }
+
+.font-weight-regular { font-weight: $fw-regular; }
+.font-weight-medium  { font-weight: $fw-medium; }
+.font-weight-semibold { font-weight: $fw-semibold; }
+
+
+.font-muted { color: $gray-300; }

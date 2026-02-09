@@ -12,3 +12,308 @@
   position: relative;
   z-index: 10;
 }
+
+.hero-section {
+  height: 500px;
+}
+
+.hero-content {
+  position: absolute;
+  padding-left:60px ;
+}
+
+.statistic-section {
+  // height: 900px;
+  background-color: $white-100;
+}
+
+.statistic-content {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+
+.statistic-item {
+  //水平padding
+  padding-left: 30px;
+  padding-right: 30px;
+
+
+}
+
+.img-icon {
+  width: 100%;
+  height: 80px;
+
+}
+
+sup {
+  font-size: 0.4em;
+  vertical-align: super; // 上標對齊
+}
+
+.square-box {
+  width: 50px;
+  height: 50px;
+  background-color: $gray-300;
+}
+
+.intro-bg {
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.intro-bg-default {
+  opacity: 1;
+}
+
+.intro-bg-hover-2 {
+  opacity: 0;
+}
+
+.intro-bg-hover-3 {
+  opacity: 0;
+}
+
+.intro-bg-hover-4 {
+  opacity: 0;
+}
+
+.intro-content {
+  z-index: 1;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, minmax(0, 1fr)); //
+  height: 100%;
+}
+
+.why-cell {
+  display: flex;
+  position: relative; // 為了讓下面的 ::after 能定位在這個區塊
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: $white-50;
+  backdrop-filter: blur(5px); //霧面
+  border-radius: $radius-xxs;
+
+  &:hover,
+  &.is-active {
+    background-color: $green-900;
+    transition: $transition-base;
+    color: transparent;
+
+  }
+}
+
+.item-1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.item-1:hover::after {
+  content: attr(data-hover);
+  color: #fff;
+  /* 想顯示的顏色 */
+}
+
+.intro-section{
+  position: relative;
+  height: 550px;
+  
+}
+
+.intro-section:has(.item-2.is-active) {
+  .intro-bg-default {
+    opacity: 0;
+  }
+  .intro-bg-hover-2 {
+    opacity: 1;
+  }
+  .intro-bg-hover-3 {
+    opacity: 0;
+  }
+  .intro-bg-hover-4 {
+    opacity: 0;
+  }
+}
+
+.intro-section:has(.item-3.is-active) {
+  .intro-bg-default {
+    opacity: 0;
+  }
+  .intro-bg-hover-2 {
+    opacity: 0;
+  }
+  .intro-bg-hover-3 {
+    opacity: 1;
+  }
+  .intro-bg-hover-4 {
+    opacity: 0;
+  }
+}
+
+.intro-section:has(.item-4.is-active) {
+  .intro-bg-hover-2 {
+    opacity: 0;
+  }
+  .intro-bg-default {
+    opacity: 0;
+  }
+  .intro-bg-hover-3 {
+    opacity: 0;
+  }
+  .intro-bg-hover-4 {
+    opacity: 1;
+  }
+}
+
+.intro-section:has(.item-5.is-active) {
+  .intro-bg-default {
+    opacity: 1;
+  }
+  .intro-bg-hover-2 {
+    opacity: 0;
+  }
+  .intro-bg-hover-3 {
+    opacity: 0;
+  }
+  .intro-bg-hover-4 {
+    opacity: 0;
+  }
+}
+
+.dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  vertical-align: middle;
+  align-self: center;
+}
+
+.intro-item {
+  background-color: brown;
+  width: 10px;
+  height: 10px;
+}
+
+.service-section {
+  background-color: $gray-100;
+  
+}
+
+
+
+.img-box {
+  
+  max-width: 100%;
+  height: 450px;
+  border-radius: $radius-xs;
+}
+
+.text-box {
+  // width: 550px;
+  max-width: 100%;
+  height: 100%;
+  border-radius: $radius-xs;
+  background-color: $white-100;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -80px;
+  margin-top: 70px;
+  border: solid 1px $gray-300;
+}
+
+.application-area {
+  background-color: $gray-100;
+}
+
+.col {
+  padding: 0px;
+  //上下border移除;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    max-width: 100%;
+  }
+
+
+  .hero-content {
+    padding:0px;
+  }
+
+  .statistic-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .statistic-item {
+    width: 100%;
+    max-width: 360px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    border-right: 0 !important;
+    border-bottom: 1px solid $gray-300;
+  }
+
+  .statistic-item:last-child {
+    border-bottom: 0;
+  }
+
+}
+
+.sheet-content {
+  padding: 60px;
+  border-radius: $radius-xxs;
+
+
+  .col {
+    position: relative; // 👈 這一行很重要！讓 ::after 知道要對齊誰
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 0.8px; // 0.5px 有些螢幕可能看不清楚，建議 1px
+      height: 60%;
+      background-color: $gray-300; // 假設 $gray-300 是這個色
+      transform: translateY(-50%);
+    }
+
+    // 小技巧：最後一個欄位不要有線
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  
+  // .hero-content {
+  //   padding: none;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
+
+  .sheet-content .col:nth-child(4n)::after {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+// 表單基本樣式
+form,
+.form-custom {
+    width: 50%;
+    
+}
+
+// 手機版調整
+@media screen and (max-width: 768px){
+    form,
+    .form-custom {
+        width: 80%;
+        margin: auto;
+    }
+}

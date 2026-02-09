@@ -1,6 +1,25 @@
-// =============================================
-// Button Styles
-// =============================================
+.btn-lg {
+    min-width:120px ;
+    height: 60px;
+    border-radius: $radius-xxs;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.btn-md {
+    min-width:100px ;
+    height: 50px;
+    border-radius: $radius-xxs;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+.btn-sm {
+    min-width:80px ;
+    height: 40px;
+    border-radius: $radius-xxs;
+}
 
 .btn-default-color {
     background-color: $green-900;
@@ -22,6 +41,10 @@
 
 .btn2-size {
     font-size: $btn2-size;
+}
+
+.btn3-size {
+    font-size: $btn3-size;
 }
 
 // Dropdown item hover
@@ -46,20 +69,32 @@
     }
 }
 
-// .btn-move-icon {
-//   transition: color 0.3s ease;
-// }
+.btn-whiteToGreen-color {
+    background-color: $white-100;
+    color: $green-700;
 
-// .btn-move-icon i {
-//   display: inline-block;
-//   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-//   margin-left: 0.25rem;
-// }
+    &:hover {
+        background-color: $green-700;
+        color: $white-100;
+    }
+}
 
-// .btn-move-icon:hover {
-//   color: $green-700;
-// }
+.btn-greenToWhite-color {
+    background-color: $green-700;
+    color: $white-100;
 
-// .btn-move-icon:hover i {
-//   transform: translateX(5px);
-// }
+    &:hover {
+        background-color: $white-100;
+        color: $green-700;
+    }
+}
+
+.btn-greenTolight-color{
+    background-color: $green-700;
+    color: $white-100;
+
+    &:hover {
+        background-color: $green-500;
+        color: $white-100;
+    }
+}

@@ -1,6 +1,30 @@
 .list-title {
+    color: $green-700;
+}
+
+.list-group .list-item {
+    
+    &:hover {
+        
+        color: $green-700;
+        // transition:$transition-base;
+        // transform: translateX(5px); // 微移動
+    }
+}
+
+.list-group-item {
+    background-color: transparent;
+    color: $font-secondary;
+    font-size: $font-size-base;
+    padding: 0.75rem 1rem;
+    //字粗
+    font-weight: $font-weight-medium;
+    position: relative; // 為了後續的絕對定位
+
     &:hover {
         color: $green-700;
         transition: $transition-base;
+        transform: translateX(5px);
+        cursor: pointer;
     }
 }
