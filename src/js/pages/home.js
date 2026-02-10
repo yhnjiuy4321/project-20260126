@@ -23,7 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
   animatedElements.forEach(el => {
     observer.observe(el);
   });
+
+  
 });
+
 
 
 

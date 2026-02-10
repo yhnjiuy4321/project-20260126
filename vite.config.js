@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         // 設定多個入口
         main: resolve(__dirname, 'index.html'),          // 這是首頁
-        design: resolve(__dirname, 'design-system.html') // 這是你要多加的頁面
+        // design: resolve(__dirname, 'design-system.html') // 這是你要多加的頁面
       }
     }
   }

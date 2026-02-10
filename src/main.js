@@ -2,13 +2,23 @@ const { createApp, ref } = window.Vue;
 
 const app = createApp({
   setup() {
+    
+    //管理輸入框的值和可見性的邏輯
     const inputValue = ref('');
     const isVisible = ref(false);
+
+    //管理 hover 狀態的邏輯
+    const isHovered = ref(false);
+    const setHovered = (value) => {
+      isHovered.value = value;
+    };
     const toggleVisibility = () => {
       isVisible.value = !isVisible.value;
     };
 
     return {
+      isHovered,
+      setHovered,
       toggleVisibility,
       isVisible,
       inputValue
@@ -41,3 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cell.addEventListener('mouseenter', () => setActiveCell(cell));
   });
 });
+
+
